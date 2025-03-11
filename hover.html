@@ -1,0 +1,38 @@
+<html>
+<head><title>task 4</title></head>
+<link rel="stylesheet" href="styl.css">
+ <script>
+    const letter=['A','B','C'];
+    let clicked_index=-1;
+
+function on_card(index){
+if(clicked_index!=index){
+
+document.getElementById("answer").innerHTML=`You Hovered at ${letter[index]}`;
+clicked_index=-1;
+}
+}
+function off_card(){
+    clicked_index=-1;
+
+document.getElementById("answer").innerHTML=` `;
+
+}
+
+function on_click_card(index,event){
+clicked_index=index;
+event.stopPropagation()
+        document.getElementById("answer").innerHTML=`You clicked on ${letter[index]}`
+}
+
+document.addEventListener("click",off_card);
+</script>
+<body >
+    <div class="ali">
+    <div class="card" onmouseover="on_card(0)" onclick="on_click_card(0,event)" ><h1>A</h1></div>
+    <div class="card" onmouseover="on_card(1)"  onclick="on_click_card(1,event)"><h1>B</h1></div>
+    <div class="card" onmouseover="on_card(2)"  onclick="on_click_card(2,event)"><h1>C</h1></div>
+    </div>
+<p id="answer"></p>
+</body>
+</html>
