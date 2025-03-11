@@ -20,9 +20,10 @@ color:white;
 }
 
 .ali{
+    height:300px;
+    width:1290px;
     justify-content: center;
    align-items: end;
-height:400px;
 display:flex;
 gap:60px;
 }
